@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+<head>
+    <!-- this portion is just telling the browser specific information about the page -->
+	  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <title>Spelling Demo </title>
+
+
+    <!-- This section of code is telling the browser how to style the webpage ie what colors to use and other instructions on how to arrange things properly -->
+    <link rel='stylesheet' type='text/css' href='css/style.css'/>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    
+</head>
+
+<body>
+
+<div id='header'> <h1> Spelling Test</h1> </div>
+<div id='spelly'>
+  <p>Spell the given words in the language you have selected</p>
+  <p>Use the Enter key to reset the current test.</p>
+
+  <form id='spellingForm'>
+	 <div>
+	   	<input type='text' id='answerBox' placeholder="spell your word"/>
+		  <input type='button' id='subButton' value = 'submit'/>
+
+      <!-- The Hint button will work by giving the student the next correct letter of the word they are spelling -->
+		  <input type='button' id='hintButton' value='hint'/>
+
+      <!-- List1 and List2 are placeholders that will be the lists of hebrew and enlgish words the students must spell, each list
+            will have its own hebrew and english words. The idea is for to have a few lists ready made for your students that they can click on to switch back and forth through     -->
+
+      <input type='button' id='list1' value='List 1'/>
+      <input type='button' id='list2' value='List 2'/>
+      <input type='button' id='customList' value="Custom List"/>
+
+	 </div>
+</div>
+
+<!-- this part here tells the student if they have correctly spelled the word or not, it will also show how many words they have left to work through -->
+<div id='span_container'>
+  <div class='box' id='right'></div>
+  <div class='box' id='wrong'></div>
+  <span id='my_span'></span>
+</div>
+
+
+<div id="customOption">
+  <p>Enter your words.</p>
+ 
+  <form>
+      <input type="text"/>
+      <input type="text"/>
+      <input type="text"/>
+      <input type="text"/>
+      <input type='submit' id='customSubmit' value='submit'/>
+  </form>
+</div>
+
+<!-- this is just a photo of a hyrax, this section of the website is just here for decoration, and we can change the picture or remove it all together depending on
+    what you want to do -->
+<div id="photo">
+  <img src="hyrax.png">
+</div>
+
+<!-- This section of code down here is telling your browser where to look for instructions on how the spelling game works -->
+<script src="js/spellScript.js"></script>
+
+</body>
+
+</html>
