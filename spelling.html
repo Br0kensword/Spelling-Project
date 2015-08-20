@@ -49,17 +49,22 @@
 </div>
 
 
+<!-- this lets the user make their own local, temporary lists to practice with -->
 <div id="customOption">
-  <p>Enter your words.</p>
+  <p>Enter your words starting with the Hebrew word followed by its English equivilent seperated by a comma.</p>
  
-  <form>
-      <input type="text"/>
-      <input type="text"/>
-      <input type="text"/>
-      <input type="text"/>
-      <input type='submit' id='customSubmit' value='submit'/>
+  <form id="customUserList">
+    <div>
+      <input type="text" id='wordOne' placeholder="Hebrew,English"/>
+      <input type="text" id='wordTwo'/>
+      <input type="text" id='wordThree'/>
+      <input type="text" id='wordFour'/>
+      <input type="text" id='wordFive'/>
+      <input type='button' id='customSubmit' value='submit'/>
+    </div>
   </form>
 </div>
+
 
 <!-- this is just a photo of a hyrax, this section of the website is just here for decoration, and we can change the picture or remove it all together depending on
     what you want to do -->

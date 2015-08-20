@@ -28,16 +28,12 @@ $('#list2').click( function() {
   alert("Loading Quiz 2");
 });
 
-$('#customList').click( function() {
-  $('#customOption').show('fast')
-
-});
-
 
 $( "#subButton" ).click(function() {
-    if ( $( "#answerBox" ).val() === wordList[currWord] ) {
-      document.getElementById('my_span').style.color='green';
-      document.getElementById('my_span').innerHTML='correct';
+    if ( $( "#answerBox" ).val() == wordList[currWord] ) {
+      $("#my_span").css('color','green');
+      $("#my_span").html('correct');
+      
       
       currWord += 1;
       $("#right").html(wordList.length);
@@ -49,16 +45,16 @@ $( "#subButton" ).click(function() {
         }
         currWord = 0;
       }
-      
+     
       return;
   }
     else{
-      document.getElementById('my_span').style.color='red';
-      document.getElementById('my_span').innerHTML='incorrect';
+      $("#my_span").css('color','red');
+      $("#my_span").html('incorrect');
+      
       
       wrongList.push(wordList[currWord]);
       
-      alert(wrongList);
       currWord += 1;
       wrongAmount += 1;
       $("#wrong").html(wrongAmount);
@@ -72,6 +68,7 @@ $( "#subButton" ).click(function() {
       }
       }
 });
+
 
 $('#hintButton').click( function() {
   var input = document.getElementById('answerBox').value;
@@ -89,6 +86,38 @@ $('#hintButton').click( function() {
   document.getElementById('answerBox').value = word.slice(0, correct+1);
 
 });
+
+
+$('#customList').click( function() {
+  $('#customOption').toggle('show');
+});
+
+
+
+$('#customSubmit').click( function() {
+  if( $("#wordOne").val()){
+    customWords.push($("#wordOne").val());
+  }
+
+  if( $("#wordTwo").val()){
+    customWords.push($("#wordTwo").val());
+  }
+
+  if( $("#wordThree").val()){
+    customWords.push($("#wordThree").val());
+  }
+
+  if( $("#wordFour").val()){
+    customWords.push($("#wordFour").val());
+  }
+
+  if( $("#wordFive").val()){
+    customWords.push($("#wordFive").val());
+  }
+
+  alert(customWords[0]);
+});
+
 
 $("#right").html(wordList.length);
 

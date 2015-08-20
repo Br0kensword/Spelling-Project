@@ -8,23 +8,23 @@
   
 }
 
-  #span_container {
-    text-align: center;
+#span_container {
+  text-align: center;
   }
-  #my_span {
-    color: red;
-    text-align: center;
+#my_span {
+  color: red;
+  text-align: center;
   }
-  #header {
-    height: 5em;
-    background-color: #630269;
-    text-align: center;
-    color: white;
+#header {
+  height: 5em;
+  background-color: #630269;
+  text-align: center;
+  color: white;
   }
-  #spelly {
-    text-align: center;
+#spelly {
+   text-align: center;
   }
-  #photo {
+#photo {
     text-align: center;
     margin-top: 3em;
   }
