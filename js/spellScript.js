@@ -2,7 +2,6 @@ var quiz1 = ['cat','doge','quail','cappy'];
 var quiz2 = ['pigeon','hyrax','piglet','snugglefish'];
 var wordList = quiz1;
 
-
 var wrongList = [];
 var customWords = [];
 
@@ -70,6 +69,8 @@ $( "#subButton" ).click(function() {
 });
 
 
+//The hintButtion when clicked takes the users word and will return the next correct letter of the word to be spelled
+//If the word is totally wrong it will give the first letter of the correct word in the answer box
 $('#hintButton').click( function() {
   var input = document.getElementById('answerBox').value;
   var correct = 0;
@@ -93,8 +94,10 @@ $('#customList').click( function() {
 });
 
 
-
+//This is super messy but for some reason .serialize() is just not working for this form
+// when customList is clicked it checks the value of the 5 inputs and sends them into the array customWords
 $('#customSubmit').click( function() {
+  customWords = [];
   if( $("#wordOne").val()){
     customWords.push($("#wordOne").val());
   }
@@ -115,7 +118,8 @@ $('#customSubmit').click( function() {
     customWords.push($("#wordFive").val());
   }
 
-  alert(customWords[0]);
+  alert(customWords);
+  wordList = customWords;
 });
 
 
