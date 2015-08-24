@@ -1,6 +1,13 @@
-var quiz1 = ['cat','doge','quail','cappy'];
+var quiz1 = ['ששש','doge','quail','cappy'];
+
 var quiz2 = ['pigeon','hyrax','piglet','snugglefish'];
-var wordList = quiz1;
+
+var quiz3 = [['להימצא', 'be located at'], ['להוסיף', 'add'], ['להבין', 'understand'], ['להתערב', 'interfere'], ['להפסיק', 'stop doing STH'], ['להפוך', 'turn in sideup', 'upside down']
+              , ['לחקות', 'imitate'], ['לנסות', 'try'], ['להיכנס', 'enter'], ['לפנות', 'turn to'], ['לפסול', 'disqualify'], ['להיגמר', 'come to an end'], ['להרגיז', 'annoy'], ['להסתובב', 'walk around']
+              , ['להשחית', 'destroy'], ['לזכות', 'merit'], ['לספר', 'tell a story', 'recount']];
+
+
+var wordList = quiz3;
 
 var wrongList = [];
 var customWords = [];
@@ -15,7 +22,8 @@ $('#list1').click( function() {
   currWord = 0;
   
   wrongList = [];
-  alert("Loading Quiz 1");
+  $("#wrong").html(wrongAmount);
+  alert(quiz3[0]);
 });
 
 $('#list2').click( function() {
@@ -24,12 +32,14 @@ $('#list2').click( function() {
   currWord = 0;
   
   wrongList = [];
+  $("#wrong").html(wrongAmount);
   alert("Loading Quiz 2");
 });
 
 
 $( "#subButton" ).click(function() {
-    if ( $( "#answerBox" ).val() == wordList[currWord] ) {
+    alert(wordList[currWord][0]);
+    if ( $( "#answerBox" ).val() == wordList[currWord][0] ) {
       $("#my_span").css('color','green');
       $("#my_span").html('correct');
       
@@ -71,13 +81,18 @@ $( "#subButton" ).click(function() {
 
 //The hintButtion when clicked takes the users word and will return the next correct letter of the word to be spelled
 //If the word is totally wrong it will give the first letter of the correct word in the answer box
+// right now the default is set up for hebrew spell checking, commented out code right now is for english spell checking which is much simpler
 $('#hintButton').click( function() {
   var input = document.getElementById('answerBox').value;
-  var correct = 0;
-  var word = wordList[currWord];
+  var word = wordList[currWord][0].split('').reverse().join('');
+  //var word = wordList[curWord][0];
 
-  for(i = 0; i<input.length; i++) {
-    if(input[i] == word[i]){
+  var correct = 0;
+  var inputLength = input.length;
+  
+  for(i = 0 ;  i < inputLength; i++) {
+    if( input[i] === word[i]) {
+      
       correct += 1;
     }
     else{
@@ -85,6 +100,8 @@ $('#hintButton').click( function() {
     }
   }
   document.getElementById('answerBox').value = word.slice(0, correct+1);
+
+  
 
 });
 
@@ -124,5 +141,8 @@ $('#customSubmit').click( function() {
 
 
 $("#right").html(wordList.length);
+
+
+
 
 
